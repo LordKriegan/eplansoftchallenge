@@ -5,7 +5,10 @@ $(document).ready(() => {
         $("#fileInfo").append("<p>Type: " + file.type + "</p>");
         $("#fileInfo").append("<p>Size: " + file.size + " bytes</p>");
     });
-
+    $("#dragbox").on("dragend", (e) => {
+        e.preventDefault();
+        console.log(e);
+    });
     $("#submitBtn").on("click", (e) => {
         e.preventDefault();
         let data = new FormData();
